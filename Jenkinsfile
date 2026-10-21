@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    IMAGE = 'HarshadaSN/devops-demo'
+    IMAGE = 'harshadasn/devops-demo'
   }
   stages {
     stage('Docker Build') {
