@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    IMAGE = 'YOUR_DOCKERHUB_USER/devops-demo'
+    IMAGE = 'HarshadaSN/devops-demo'
   }
   stages {
     stage('Docker Build') {
@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'harshadasn', passwordVariable: 'Harshu@1997')]) {
+        withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DH_USER', passwordVariable: 'DH_PASS')]) {
           sh 'echo $DH_PASS | docker login -u $DH_USER --password-stdin'
           sh 'docker push $IMAGE:$BUILD_NUMBER'
           sh 'docker push $IMAGE:latest'
