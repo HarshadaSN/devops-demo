@@ -5,3 +5,4 @@ metadata:
 data:
   SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/appdb
   SPRING_DATASOURCE_USERNAME: root
+  MANAGEMENT_ENDPOINT_HEALTH_PROBES_ENABLED: "true"
